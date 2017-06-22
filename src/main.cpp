@@ -35,7 +35,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x26ea868338be243f3234a171bbcf8c082e1a941fcf414fae66fd8bf4ac09137e");
+uint256 hashGenesisBlock("0x03b52a45dcbc39a9b57f0f43312912fa3dd08cddd4ea0a46f0e709b18d786017");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Solarcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2753,7 +2753,7 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 0xd1;
         pchMessageStart[2] = 0xb3;
         pchMessageStart[3] = 0xd2;
-        hashGenesisBlock = uint256("0x26ea868338be243f3234a171bbcf8c082e1a941fcf414fae66fd8bf4ac09137e");
+        hashGenesisBlock = uint256("0x03b52a45dcbc39a9b57f0f43312912fa3dd08cddd4ea0a46f0e709b18d786017");
     }
 
     //
@@ -2786,7 +2786,7 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "21.06.2017 Day of the summer solstice";
+        const char* pszTimestamp = "21.06.2017 Day of the summer solstice!";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2800,12 +2800,12 @@ bool InitBlockIndex() {
         block.nVersion = 1;
         block.nTime    = 1495464276;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 5743920;
+        block.nNonce   = 9946268;
 
         if (fTestNet)
         {
             block.nTime    = 1495464276;
-            block.nNonce   = 5743920;
+            block.nNonce   = 9946268;
         }
 
         //// debug print
@@ -2813,7 +2813,7 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xfd6ae575bdf5dda67bd000b4da5076b60127b9a96e0414b903d89e997a4387b3"));
+        assert(block.hashMerkleRoot == uint256("0xf4443d5569d15ada467711baed6612b9a60cfe9107b9b506ce8036210589913a"));
 		if (true && block.GetHash() != hashGenesisBlock)
          {
              printf("Searching for genesis block...\n");
